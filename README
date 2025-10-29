@@ -1,0 +1,126 @@
+# 🍲 FoodAid – MERN Donation & Impact Tracking Platform
+
+FoodAid is a full-stack MERN (MongoDB, Express, React, Node.js) application designed to manage donations, track impact, and connect volunteers, donors, and administrators in food relief efforts.
+
+---
+
+## 🚀 Features
+
+### 👥 User Management
+- User registration & authentication (JWT-based)
+- Protected routes for logged-in users
+- User profile creation and update
+
+### 💰 Donations
+- Users can make and view donations
+- Admins can view all donations
+- Tracks donation title, quantity, location, and time created
+
+### 💚 Impact Tracking
+- Record how donations helped beneficiaries
+- Aggregate reports on the total number of people reached
+- Latest impact stories and stats
+
+### 📊 Admin Dashboard
+- View total users, donations, and impact reports
+- View latest donations and recent impacts
+- View total beneficiaries helped
+
+### 🖥️ Frontend (React + Vite)
+- Clean, responsive user interface
+- Authentication and protected views
+- Integration with backend APIs
+- Dashboard, Profile, Donations, and Impact pages
+
+---
+
+## 🧱 Project Structure
+
+
+foodaid/
+│
+├── client/ # Frontend (React + Vite)
+│ ├── src/
+│ ├── public/
+│ ├── package.json
+│
+├── server/ # Backend (Node + Express + MongoDB)
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ ├── config/
+│ ├── server.js
+│ ├── package.json
+│
+├── .gitignore
+├── package.json # Root file (runs client + server concurrently)
+└── README.md
+
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/<your-username>/foodaid.git
+cd foodaid
+
+2️⃣ Install dependencies
+
+Backend
+
+cd server
+npm install
+
+
+Frontend
+
+cd ../client
+npm install
+
+
+3️⃣ Setup environment variables
+
+Create a .env file inside /server and add:
+MONGO_URI=<your-mongodb-connection-string>
+JWT_SECRET=<your-jwt-secret>
+PORT=5000
+
+Run the Project Concurrently
+
+From the root folder (foodaid/), make sure you have this script in your root package.json:
+{
+  "scripts": {
+    "start": "concurrently \"npm run dev --prefix client\" \"npm run server --prefix server\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
+
+Then install concurrently:
+npm install concurrently --save-dev
+
+Now start both servers:
+npm start
+
+✅ React will run on http://localhost:5173
+
+✅ Node/Express will run on http://localhost:5000
+
+🧑‍💻 Author
+
+Daniel Muturi
+Marketing Director | Developer | Founder of FOODAID
+🌐 LinkedIn
+
+📧 Email: [dannymuturi99@gmail.com
+]
+💼 GitHub: https://github.com/Mukangafu
+
+🏁 License
+
+This project is licensed under the MIT License — you’re free to use, modify, and distribute it with attribution.
